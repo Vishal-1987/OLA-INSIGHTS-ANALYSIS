@@ -1,0 +1,19 @@
+-- DATA CLEANING PART
+
+SELECT * FROM ola;
+
+ALTER TABLE ola RENAME COLUMN ï»¿Date to date;
+
+ALTER TABLE ola DROP COLUMN MyUnknownColumn;
+
+
+ALTER TABLE ola ADD COLUMN day date;
+
+UPDATE ola 
+SET day=Date(date) ;
+
+ALTER TABLE ola DROP COLUMN date;
+
+ALTER TABLE ola 
+MODIFY day DATE 
+FIRST;
